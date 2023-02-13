@@ -65,7 +65,7 @@ public class Camera
     {
         double speedFactor = maximumSpeed / 100.0;
         double minDelayinMs = 6000 / speedFactor - 400;
-        double maxDelayinMs = 6000 / speedFactor + 400;
+        double maxDelayinMs = 6000 / speedFactor + 300;
         _minExitDelayInMs = (int)Math.Round(minDelayinMs);
         _maxExitDelayInMs = (int)Math.Round(maxDelayinMs);
     }
