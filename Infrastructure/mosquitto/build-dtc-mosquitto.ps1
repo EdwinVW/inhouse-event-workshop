@@ -1,1 +1,0 @@
-docker build -t dapr-trafficcontrol/mosquitto:1.0 .
