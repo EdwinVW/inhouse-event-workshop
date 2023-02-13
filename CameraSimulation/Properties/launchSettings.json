@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CameraSimulation": {
+      "commandName": "Project",
+      "commandLineArgs": "120"
+    }
+  }
+}

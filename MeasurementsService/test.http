@@ -1,0 +1,19 @@
+// Register average speed
+POST http://127.0.0.1:6003/averageSpeed
+Content-Type: application/json
+
+{ "AverageSpeedInInKmh": {{$randomInt 100 150}}, "timestamp": "{{$localDatetime iso8601}}" }
+
+###
+
+// Register CO2 level
+POST http://127.0.0.1:6003/co2Level
+Content-Type: application/json
+
+{ "CO2LevelInPPM": {{$randomInt 275 375}}, "timestamp": "{{$localDatetime iso8601}}" }
+
+###
+
+// Get sample points
+GET http://127.0.0.1:6003/metrics
+

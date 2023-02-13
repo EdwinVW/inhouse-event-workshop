@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "Infrastructure"
+		},
+		{
+			"path": "TrafficControlService"
+		},
+		{
+			"path": "MeasurementsService"
+		},
+		{
+			"path": "CameraSimulation"
+		},
+		{
+			"path": "CO2SensorSimulation"
+		}
+	],
+	"settings": {}
+}
