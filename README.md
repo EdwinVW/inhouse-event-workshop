@@ -52,7 +52,7 @@ Using the overall average speed and CO2 levels over time, we can get investigate
 
 In order to simulate this in code, I created the following services:
 
-<img src="./img/services.png" alt="Services" style="zoom:25%;" />
+<img src="img/services.png" style="zoom: 33%;" />
 
 - The **Camera Simulation** is a .NET Core console application that will simulate passing cars.
 - The **CO2 Sensor Simulation** is a .NET Core console application that will simulate a CO2 level sensor.
@@ -82,6 +82,8 @@ The way the simulation works is depicted in the sequence diagram below:
 ## Hands-on Workshop
 
 TODO
+
+<img src="img/services-dapr.png" style="zoom: 33%;" />
 
 ### Assignment 1
 
