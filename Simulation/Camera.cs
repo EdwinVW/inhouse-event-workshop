@@ -1,4 +1,4 @@
-namespace CameraSimulation;
+namespace Simulation;
 
 public class Camera
 {
@@ -18,11 +18,16 @@ public class Camera
         _trafficControlService = trafficControlService;
     }
 
-    public Task Start()
+    public void Start(CancellationToken cancellationToken)
+    {
+        Task.Run(() => Loop(cancellationToken));
+    }
+
+    public void Loop(CancellationToken cancellationToken)
     {
         Console.WriteLine($"Start camera {_camNumber} simulation.");
 
-        while (true)
+        while (!cancellationToken.IsCancellationRequested)
         {
             try
             {

@@ -1,3 +1,3 @@
-namespace CO2SensorSimulation.Events;
+namespace Simulation.Events;
 
 public record struct CO2LevelMeasured(int CO2LevelInPPM, DateTime Timestamp);

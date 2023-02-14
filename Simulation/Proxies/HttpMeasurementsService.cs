@@ -1,4 +1,4 @@
-namespace CO2SensorSimulation.Proxies;
+namespace Simulation.Proxies;
 
 public class HttpMeasurementsService : IMeasurementsService
 {

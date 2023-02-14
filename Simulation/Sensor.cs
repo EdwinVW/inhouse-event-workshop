@@ -1,4 +1,4 @@
-namespace CO2SensorSimulation;
+namespace Simulation;
 
 public class Sensor
 {
@@ -14,7 +14,12 @@ public class Sensor
         _rnd = new Random();
     }
 
-    public async Task Start()
+    public void Start(CancellationToken cancellationToken)
+    {
+        Task.Run(() => Loop(cancellationToken));
+    }
+
+    public async Task Loop(CancellationToken cancellationToken)
     {
         Console.WriteLine($"Start CO2 Level simulation.");
 
@@ -43,7 +48,8 @@ public class Sensor
 
     private int GetCO2Level()
     {
-        // TODO: make dependent on max speed
-        return _rnd.Next(250, 400);
+        var speedFactor = (_maximumSpeed - 70) / 2.0;
+        var level = _rnd.Next(388, 398) + speedFactor;
+        return (int)Math.Round(level, MidpointRounding.AwayFromZero);
     }
 }

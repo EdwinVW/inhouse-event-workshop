@@ -54,15 +54,9 @@ In order to simulate this in code, I created the following services:
 
 <img src="img/services.png" style="zoom: 33%;" />
 
-- The **Camera Simulation** is a .NET Core console application that will simulate passing cars.
-- The **CO2 Sensor Simulation** is a .NET Core console application that will simulate a CO2 level sensor.
-- The **Traffic Control Service** is an ASP.NET Core WebAPI application that offers 2 endpoints: `/entrycam` and `/exitcam`.
-- The **Measurements Service** is an ASP.NET Core WebAPI application that offers 3 endpoints: `/averageSpeed`, `/co2Level` and `/stats`.
-- The **Measurements Dashboard** is an ASP.NET Core Web application that shows a dashboard with the measurements.
-
-The Dashboard will show 2 synchronized graphs with the metrics:
-
-<img src="img/graphs.png" style="zoom:25%" />
+- The **Simulation** is a .NET console application that will simulate the 3 entry- and exit-camera's with cars passing under them and the CO2 level sensor.
+- The **Traffic Control Service** is an ASP.NET WebAPI application that offers 2 endpoints: `/entrycam` and `/exitcam`.
+- The **Measurements Service** is an ASP.NET Core WebAPI application that offers 3 endpoints: `/averageSpeed`, `/co2Level` and `/metrics`.
 
 The way the simulation works is depicted in the sequence diagram below:
 
@@ -77,7 +71,9 @@ The way the simulation works is depicted in the sequence diagram below:
 1. The **Measurements Service** calculates the overall average speed over time since the last sample point (see 9) and stores this.
 1. Every 15 seconds, the **CO2 Sensor Simulation** reads the current level of CO2 in the air and sends this to the `/co2Level` endpoint of the **Measurements Service**. The request payload will be a *CO2LevelMeasured* message containing the the amount of CO2 in the air expressed in parts per million (ppm) and the timestamp of the measurement. 
 1. The **Measurements Service** generates a *sample point*. A sample point is a measurement at a point in time that contains a timestamp, the average speed over time since the last sample point and the CO2 level at that point in time.
-1. The **Measurement Dashboard** gets all the sample points by calling the metrics endpoint of the of the **Measurements Service** and renders 2 graphs. The **Measurements Service** returns the last 50 sample points.  
+1. The **Dashboard** gets all the sample points by calling the metrics endpoint of the of the **Measurements Service**. The **Measurements Service** returns the last 50 sample points. This data can be used to create a dashboard that will plot the average speed and CO2 level in a graph:
+
+<img src="img/graphs.png" style="zoom:25%" />
 
 ## Hands-on Workshop
 

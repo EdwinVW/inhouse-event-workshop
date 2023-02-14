@@ -1,4 +1,4 @@
-namespace CameraSimulation.Proxies;
+namespace Simulation.Proxies;
 
 public interface ITrafficControlService
 {

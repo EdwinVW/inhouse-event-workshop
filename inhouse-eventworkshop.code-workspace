@@ -10,10 +10,7 @@
 			"path": "MeasurementsService"
 		},
 		{
-			"path": "CameraSimulation"
-		},
-		{
-			"path": "CO2SensorSimulation"
+			"path": "Simulation"
 		}
 	],
 	"settings": {}
