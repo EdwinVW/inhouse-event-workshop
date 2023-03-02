@@ -1,5 +1,5 @@
 ﻿// determine max speed
-var maximumSpeed = args.Length == 1 ? Convert.ToInt32(args[0]) : 100;
+var maximumSpeed = args.Length == 1 ? Convert.ToInt32(args[0]) : 120;
 int[] allowedMaxSpeeds = new int[] { 80, 90, 100, 120, 130 };
 if (!allowedMaxSpeeds.Contains(maximumSpeed))
 {
