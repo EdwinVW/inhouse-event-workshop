@@ -45,7 +45,46 @@ The way the simulation works is depicted in the sequence diagram below:
 
 <img src="img/graphs.png" style="zoom:25%" />
 
-## Hands-on assignment
+## Running the services
+
+You can start the services using the `dotnet run` command. Follow the instructions below to get the sample application up & running:
+
+1. Open a terminal window. You could use the terminal window in Visual Studio Code.  
+
+1. Go into the `src/MeasurementsService` folder.
+
+1. Start the service by typing `dotnet run`. You should see output like this:
+   ```PowerShell
+   ❯ dotnet run
+   info: Microsoft.Hosting.Lifetime[14]
+         Now listening on: http://localhost:6003
+   info: Microsoft.Hosting.Lifetime[0]
+         Application started. Press Ctrl+C to shut down.
+   info: Microsoft.Hosting.Lifetime[0]
+         Hosting environment: Development
+   info: Microsoft.Hosting.Lifetime[0]
+         Content root path: D:\dev\inhouse-event-workshop\MeasurementsService
+   ```
+
+1. Open a new terminal window.
+
+1. Go into the `src/TrafficCOntrolService` folder.
+
+1. Start the service by typing `dotnet run`.
+
+1. Open a new terminal window.
+
+1. Go into the `src/Simulation` folder.
+
+1. Start the simulation by typing `dotnet run`.
+
+You can see in the logging of the Measurements service what the average speed and CO2 level in the air is:
+
+![image-20230302131559093](img/measurementsservice-logging.png)
+
+Now that you have the application running, you will start adding Dapr to it.
+
+## Hands-on assignments
 
 You've just heard about how Dapr can help with implementing microservices. In this hand-on part of the workshop, you will add Dapr building-blocks to the solution described above. The end result should look like this:
 
@@ -53,7 +92,28 @@ You've just heard about how Dapr can help with implementing microservices. In th
 
 The workshop will not tell you exactly what to do. It's up to you to add the Dapr building-blocks. You can use the [Dapr Documentation](https://docs.dapr.io/) to get more information on how to implement the different Building Blocks. 
 
-Make sure you've installed the [prerequisites](#prerequisites), and you can dive right in!
+Make sure you've installed the prerequisites listed below, and you can dive right in!
+
+## Prerequisites
+
+In order to get most value out of the workshop, make sure you have the prerequisites installed on your machine before the workshop starts. Install the General prerequisites first. Then, select the technology stack you are going to use for executing the workshop assignments and install the prerequisites for that technology stack.
+
+#### General
+
+- Git ([download](https://git-scm.com/))
+- Visual Studio Code ([download](https://code.visualstudio.com/download)) with at least the following extensions installed:
+  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+- Docker for desktop ([download](https://www.docker.com/products/docker-desktop))
+- [Install the Dapr CLI](https://docs.dapr.io/getting-started/install-dapr-cli/) and [initialize Dapr locally](https://docs.dapr.io/getting-started/install-dapr-selfhost/)
+
+All scripts in the instructions are PowerShell scripts. If you're working on a Mac, it is recommended to install PowerShell for Mac:
+
+- PowerShell for Mac ([instructions](https://docs.microsoft.com/nl-nl/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1))
+
+#### .NET
+
+- .NET 7 SDK ([download](https://dotnet.microsoft.com/download/dotnet/7.0))
+- [C# extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
 
 ---
 
@@ -95,24 +155,3 @@ In the `Infrastructure` folder in the repository you can find scripts to start a
 > This assignment is for people that have finished all the other assignments within the timespan of te workshop. 
 
 **Goal:** create a cool web-based Measurements DashBoard that shows the metrics. 
-
-## Prerequisites
-
-In order to get most value out of the workshop, make sure you have the prerequisites installed on your machine before the workshop starts. Install the General prerequisites first. Then, select the technology stack you are going to use for executing the workshop assignments and install the prerequisites for that technology stack.
-
-#### General
-
-- Git ([download](https://git-scm.com/))
-- Visual Studio Code ([download](https://code.visualstudio.com/download)) with at least the following extensions installed:
-  - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
-- Docker for desktop ([download](https://www.docker.com/products/docker-desktop))
-- [Install the Dapr CLI](https://docs.dapr.io/getting-started/install-dapr-cli/) and [initialize Dapr locally](https://docs.dapr.io/getting-started/install-dapr-selfhost/)
-
-All scripts in the instructions are PowerShell scripts. If you're working on a Mac, it is recommended to install PowerShell for Mac:
-
-- PowerShell for Mac ([instructions](https://docs.microsoft.com/nl-nl/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7.1))
-
-#### .NET
-
-- .NET 7 SDK ([download](https://dotnet.microsoft.com/download/dotnet/7.0))
-- [C# extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
