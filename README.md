@@ -1,6 +1,6 @@
 # Info Support in-house event workshop
 
-This repo contains a workshop that teaches you how to apply Dapr to a microservices application. This repository contains the source-code that forms the starting point of the workshop. During the workshop you will have to add new services to the solution and integrate these into the solution using Dapr.
+This README contains instructions for the Dapr workshop. The goal of the workshop is to apply Dapr to a microservices application. This repository contains the source-code that forms the starting point of the workshop. 
 
 ## Case Setup
 
@@ -45,6 +45,8 @@ The way the simulation works is depicted in the sequence diagram below:
 
 <img src="img/graphs.png" style="zoom:25%" />
 
+You can check out the code of the sample solution by opening Visual Studio Code and opening the workspace file `inhouse-eventworkshop.code-workspace` in the repository. Go though the code and get familiar with how things are setup (with proxies and repositories).
+
 ## Running the services
 
 You can start the services using the `dotnet run` command. Follow the instructions below to get the sample application up & running:
@@ -68,7 +70,7 @@ You can start the services using the `dotnet run` command. Follow the instructio
 
 1. Open a new terminal window.
 
-1. Go into the `src/TrafficCOntrolService` folder.
+1. Go into the `src/TrafficControlService` folder.
 
 1. Start the service by typing `dotnet run`.
 
@@ -82,7 +84,15 @@ You can see in the logging of the Measurements service what the average speed an
 
 ![image-20230302131559093](img/measurementsservice-logging.png)
 
-Now that you have the application running, you will start adding Dapr to it.
+You can specify the maximum speed for the highway used by the Simulation on the command-line:
+
+```PowerShell
+dotnet run -- 80
+```
+
+The allowed maximum speeds are: 80, 90, 100, 120 or 130. Now you can see whether the maximum speed impacts the level of CO2 in the air.
+
+Now that you have the application running, you will start adding Dapr to it in the workshop assignments.
 
 ## Hands-on assignments
 
@@ -139,9 +149,11 @@ Goal: make sure all communication with the Measurements service is done using as
 
 ---
 
-### Stretch Goal 1
+### Stretch Goals
 
-> This assignment is for people that have finished all the other assignments within the timespan of te workshop. 
+These stretch goals are for people that have finished all the other assignments within the timespan of te workshop. You can choose a stretch goal randomly. You don't have to do the in any particular order. 
+
+#### Stretch goal 1
 
 **Goal:** change the message-broker used in assignment 3 from Redis to RabbitMQ. 
 
@@ -150,8 +162,6 @@ In the `Infrastructure` folder in the repository you can find scripts to start a
 - Username:`guest`
 - Password: `guest`
 
-### Stretch Goal 2
+#### Stretch Goal 2 
 
-> This assignment is for people that have finished all the other assignments within the timespan of te workshop. 
-
-**Goal:** create a cool web-based Measurements DashBoard that shows the metrics. 
+**Goal:** create a cool Measurements DashBoard that shows the metrics.  How you create it is up to you. You could create a Blazor app, an Anguar website or a Mobile App. Whatever you like to do. And think of a creative way of presenting the metrics to the user.
