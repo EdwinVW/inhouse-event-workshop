@@ -164,6 +164,8 @@ In the `Infrastructure` folder in the repository you can find scripts to start a
 - Username:`guest`
 - Password: `guest`
 
+Make sure you create a new account and use this account and its password in the Dapr component-configuration file.
+
 #### Stretch Goal 2
 
 **Goal: use other Dapr building-blocks in the sample application.** 
