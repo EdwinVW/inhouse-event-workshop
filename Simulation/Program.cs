@@ -28,6 +28,6 @@ var measurementsService = new HttpMeasurementsService(httpClient);
 var sensor = new Sensor(maximumSpeed, measurementsService);
 sensor.Start(ctSource.Token);
 
-Console.ReadKey(true);
+await Task.Delay(-1);
 
 ctSource.Cancel();
