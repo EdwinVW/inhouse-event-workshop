@@ -129,23 +129,25 @@ All scripts in the instructions are PowerShell scripts. If you're working on a M
 
 ### Assignment 1
 
-**Goal:** make sure all communication between the Simulation and the TrafficControl service is done using Dapr service invocation. 
+**Goal: make sure all communication between the Simulation and the TrafficControl service is done using Dapr service invocation.** 
 
-Replace the default HTTP Proxy implementation and use the Dapr API (or de the .NET SDK for Dapr) to call the Traffic Control service using service invocation. 
+Replace the default HTTP Proxy implementation and use the Dapr API to call the Traffic Control service using service invocation. Do this using the Dapr API directly and after that using the [Dapr SDK for .NET](https://docs.dapr.io/developing-applications/sdks/dotnet/).
 
 ---
 
 ### Assignment 2
 
-**Goal:** make sure the TrafficControl service stores its state in Redis through the Dapr state-management building block.
+**Goal: make sure the TrafficControl service stores its state in Redis through the Dapr state-management building block.**
 
-Currently, the state is stored in memory. Replace the current Repository implementation with one that uses Dapr state-management.
+Currently, the state is stored in memory. Replace the current Repository implementation with one that uses Dapr state-management. Do this using the Dapr API directly and after that using the [Dapr SDK for .NET](https://docs.dapr.io/developing-applications/sdks/dotnet/).
 
 ---
 
 ### Assignment 3
 
-Goal: make sure all communication with the Measurements service is done using asynchronous messaging. You will use the Redis server that is installed by default with Dapr as the message broker.
+**Goal: make sure all communication with the Measurements service is done using asynchronous messaging.** 
+
+You will use the Redis server that is installed by default with Dapr as the message broker. Do this using the Dapr API directly and after that using the [Dapr SDK for .NET](https://docs.dapr.io/developing-applications/sdks/dotnet/).
 
 ---
 
@@ -155,13 +157,21 @@ These stretch goals are for people that have finished all the other assignments 
 
 #### Stretch goal 1
 
-**Goal:** change the message-broker used in assignment 3 from Redis to RabbitMQ. 
+**Goal: change the message-broker used in assignment 3 from Redis to RabbitMQ.** 
 
 In the `Infrastructure` folder in the repository you can find scripts to start and stop RabbitMQ as a Docker container on your local machine. Once started, you can access the RabbitMQ management console by browsing to [https://localhost:15672](https://localhost:15672). The default login credentials are: 
 
 - Username:`guest`
 - Password: `guest`
 
-#### Stretch Goal 2 
+#### Stretch Goal 2
 
-**Goal:** create a cool Measurements DashBoard that shows the metrics.  How you create it is up to you. You could create a Blazor app, an Anguar website or a Mobile App. Whatever you like to do. And think of a creative way of presenting the metrics to the user.
+**Goal: use other Dapr building-blocks in the sample application.** 
+
+You may use any Dapr building-block and change / add services if you want.
+
+#### Stretch Goal 3 
+
+**Goal: create a cool Measurements DashBoard that shows the metrics.**  
+
+How you create it is up to you. You could create a Blazor app, an Anguar website or a Mobile App. Whatever you like to do. And think of a creative way of presenting the metrics to the user.
